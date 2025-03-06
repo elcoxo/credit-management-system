@@ -14,6 +14,7 @@ public class ClientMapper {
         client.setFirstName(request.getFirstName());
         client.setLastName(request.getLastName());
         client.setMiddleName(request.getMiddleName());
+        client.setDateOfBirth(request.getDateOfBirth());
         client.setMaritalStatus(request.getMaritalStatus());
         client.setPhoneNumber(request.getPhoneNumber());
 
@@ -46,6 +47,7 @@ public class ClientMapper {
         response.setFirstName(client.getFirstName());
         response.setLastName(client.getLastName());
         response.setMiddleName(client.getMiddleName());
+        response.setDateOfBirth(client.getDateOfBirth());
         response.setMaritalStatus(client.getMaritalStatus());
         response.setPhoneNumber(client.getPhoneNumber());
 
