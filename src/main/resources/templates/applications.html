@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<div class="container mx-auto">
+  <div class="lg:flex lg:items-center lg:justify-between mt-4 mb-8">
+    <div class="min-w-0 flex-1">
+      <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">📃 Список заявок</h2>
+      <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+        <a href="/">
+        <div class="mt-2 flex items-center text-sm text-gray-500 hover:text-gray-800">
+          🏠 На главную
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="mt-5 flex lg:mt-0 lg:ml-4">
+      <span class="sm:ml-3">
+        <a th:href="@{/create-form}">
+      <button type="button" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        Создать заявку
+      </button>
+        </a>
+    </span>
+
+
+    </div>
+  </div>
+
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <div class="p-2 md:p-4">
+    <div class="w-full px-6 my-8  sm:rounded-lg">
+        <form th:action="@{/applications}" method="get">
+          <button type="submit" class="text-white bg-indigo-700  hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Все заявки</button>
+        </form>
+        <form th:action="@{/applications}" method="get">
+          <input type="hidden" name="sign" value="SIGNED" />
+          <button type="submit" class="text-white bg-indigo-700  hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Подписанные заявки</button>
+        </form>
+      <form th:action="@{/applications}" method="get">
+        <input type="hidden" name="status" value="APPROVED" />
+        <button type="submit" class="text-white bg-indigo-700  hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Одобренные заявки</button>
+      </form>
+    </div>
+  </div>
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+    <tr>
+      <th class="p-4 border-b border-slate-200 bg-slate-50">
+        <p class="text-sm font-normal leading-none text-slate-500">
+          Идентификатор
+        </p>
+      </th>
+      <th class="p-4 border-b border-slate-200 bg-slate-50">
+        <p class="text-sm font-normal leading-none text-slate-500">
+          Статус заявки
+        </p>
+      </th>
+      <th class="p-4 border-b border-slate-200 bg-slate-50">
+        <p class="text-sm font-normal leading-none text-slate-500">
+          Запрашиваемая сумма
+        </p>
+      </th>
+
+      <th class="p-4 border-b border-slate-200 bg-slate-50 text-end">
+        <p class="text-sm font-normal leading-none text-slate-500">
+          Действие
+        </p>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr class="hover:bg-slate-50 border-b border-slate-200" th:each="app : ${applications}">
+      <td class="p-4 py-5">
+        <p class="block  text-sm text-slate-500" th:text="${app.id}"></p>
+      </td>
+      <td class="p-4 py-5">
+        <p class="text-sm text-slate-500" th:text="${app.status}"></p>
+      </td>
+      <td class="p-4 py-5">
+        <p class="text-sm text-slate-500" th:text="${app.requestedAmount}"></p>
+      </td>
+
+      <td class="p-4 py-5 text-end">
+        <a th:href="@{clients/{id}(id=${app.id})}">
+          <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            Подробнее
+          </button>
+        </a>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex items-center justify-center h-screen">
+<div class="text-center">
+    <h1 class="text-5xl font-bold text-gray-900 mb-4">АРМ-менеджер<br>по оформлению кредита</h1>
+    <p class="text-gray-500 mb-8">Использованный стек технологий: Spring MVC, Hibernate, PostgreSQL</p>
+    <div class="space-y-4 ">
+        <a href="/clients" class="flex items-center space-x-4 mb-4 hover:bg-gray-100 hover:text-gray-800 rounded-2xl p-2 transition-colors duration-200">
+            <div class="w-15 h-15 bg-white border border-indigo-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">🧑‍💼</span>
+            </div>
+            <div class="flex-1 text-left">
+                <h2 class="text-gray-600 text-xl font-semibold transition-colors duration-200">Список всех клиентов</h2>
+                <p class="text-gray-400 text-sm transition-colors duration-200">Вывести список всех клиентов</p>
+            </div>
+            <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+    </div>
+    <div class="space-y-4 ">
+        <a href="/search" class="flex items-center space-x-4 mb-4 hover:bg-gray-100 hover:text-gray-800 rounded-2xl p-2 transition-colors duration-200">
+            <div class="w-15 h-15 bg-white border border-indigo-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">🔎</span>
+            </div>
+            <div class="flex-1 text-left">
+                <h2 class="text-gray-600 text-xl font-semibold transition-colors duration-200">Поиск клиента</h2>
+                <p class="text-gray-400 text-sm transition-colors duration-200">Поиск клиента по телефону, ФИО и паспортным данным</p>
+            </div>
+            <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+    </div>
+    <div class="space-y-4 ">
+        <a href="/applications" class="flex items-center space-x-4 mb-4 hover:bg-gray-100 hover:text-gray-800 rounded-2xl p-2 transition-colors duration-200">
+            <div class="w-15 h-15 bg-white border border-indigo-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">✅</span>
+            </div>
+            <div class="flex-1 text-left">
+                <h2 class="text-gray-600 text-xl font-semibold transition-colors duration-200">Cписок заявок со статусом</h2>
+                <p class="text-gray-400 text-sm transition-colors duration-200">Вывести список заявок со статусом одобрения</p>
+            </div>
+            <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+    </div>
+    <div class="space-y-4 ">
+        <a href="#" class="flex items-center space-x-4 mb-4 hover:bg-gray-100 hover:text-gray-800 rounded-2xl p-2 transition-colors duration-200">
+            <div class="w-15 h-15 bg-white border border-indigo-100 rounded-xl flex items-center justify-center">
+                <span class="text-3xl">📝</span>
+            </div>
+            <div class="flex-1 text-left">
+                <h2 class="text-gray-600 text-xl font-semibold transition-colors duration-200">Cписок подписанных кредитных договоров</h2>
+                <p class="text-gray-400 text-sm transition-colors duration-200">Вывести список подписанных кредитных договоров со статусом подписания</p>
+            </div>
+            <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+    </div>
+</div>
+</body>
+</html>

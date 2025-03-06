@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<div class="container mx-auto">
+    <div class="lg:flex lg:items-center lg:justify-between mt-4 mb-8">
+        <div class="min-w-0 flex-1">
+            <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">👤 Составить заявку</h2>
+            <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+                <a href="/">
+                    <div class="mt-2 flex items-center text-sm text-gray-500 hover:text-gray-800">
+                        🔙 Все клиенты
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="p-2 md:p-4">
+        <div class="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
+            <div class="grid max-w-2xl mx-auto mt-8">
+                <div class="items-center space-y-5 sm:flex-row sm:space-y-0">
+                    <h2 class="text-2xl font-bold sm:text-xl pb-6">Обшая информация</h2>
+                    <div class="object-cover w-20 h-20 p-1 rounded-full ring-2 ring-indigo-300 flex items-center justify-center text-3xl" >
+                        🙂
+                    </div>
+                </div>
+                <div class="items-center mt-6 text-[#202142]">
+                    <form action="#" th:action="@{/create}" th:object="${request}" method="post">
+                    <div
+                            class="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
+                        <div class="w-full">
+                            <label for="firstName"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Имя</label>
+                            <input type="text" id="firstName"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                    th:field="*{firstName}">
+                        </div>
+
+                        <div class="w-full">
+                            <label for="lastName"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Фамилия</label>
+                            <input type="text" id="lastName"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                    th:field="*{lastName}">
+                        </div>
+
+                    </div>
+
+                    <div class="mb-2 sm:mb-6">
+                        <label for="middleName"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Отчество</label>
+                        <input type="text" id="middleName"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{middleName}">
+                    </div>
+
+                    <div>
+                    <div class="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
+                        <div class="w-full">
+                            <label for="dateOfBirth"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Дата рождения</label>
+                            <input type="date" id="dateOfBirth"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                   th:field="*{dateOfBirth}">
+                        </div>
+
+                        <div class="w-full">
+                            <label for="maritalStatus"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Семейное положение</label>
+                            <select th:field="*{maritalStatus}" id="maritalStatus"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 " >
+                                <option value="SINGLE">SINGLE</option>
+                                <option value="MARRIED">MARRIED</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-2 sm:mb-6">
+                        <label for="phoneNumber"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Номер телефона</label>
+                        <input type="text" id="phoneNumber"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{phoneNumber}">
+                    </div>
+
+                    <hr class="my-8 h-0.5 border-t-0 bg-gray-100" />
+
+                    <h2 class="text-2xl font-bold sm:text-xl pb-6">Паспортные данные</h2>
+                    <div class="mb-2 sm:mb-6">
+                        <label for="address"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Адрес проживания</label>
+                        <input type="text" id="address"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{address}">
+                    </div>
+
+                    <div class="mb-2 sm:mb-6">
+                        <label for="identityNumber"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Серия и номер паспорта</label>
+                        <input type="text" id="identityNumber"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{identityNumber}">
+                    </div>
+
+                    <hr class="my-8 h-0.5 border-t-0 bg-gray-100" />
+
+                    <h2 class="text-2xl font-bold sm:text-xl pb-6">Сведения о занятости</h2>
+                    <div class="mb-2 sm:mb-6">
+                        <label for="companyName"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Название организации</label>
+                        <input type="text" id="companyName"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{companyName}">
+                    </div>
+
+                    <div class="mb-2 sm:mb-6">
+                        <label for="jobPosition"
+                               class="block mb-2 text-sm font-medium text-indigo-900 ">Должность</label>
+                        <input type="text" id="jobPosition"
+                               class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                               th:field="*{jobPosition}">
+                    </div>
+
+                    </div>
+                    <div class="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
+                        <div class="w-full">
+                            <label for="startDate"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Начало работы</label>
+                            <input type="date" id="startDate"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                   th:field="*{startDate}">
+                        </div>
+
+                        <div class="w-full">
+                            <label for="endDate"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Конец работы</label>
+                            <input type="date" id="endDate"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                   th:field="*{endDate}">
+                        </div>
+
+                    </div>
+
+                    <hr class="my-8 h-0.5 border-t-0 bg-gray-100" />
+                    <h2 class="text-2xl font-bold sm:text-xl pb-6">Заявка на кредит</h2>
+                    <div>
+                    <div class="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
+                        <div class="w-full">
+                            <label for="creditApplication.requestedAmount"
+                                   class="block mb-2 text-sm font-medium text-indigo-900 ">Сумма желаемого кредита</label>
+                            <input type="text" id="creditApplication.requestedAmount"
+                                   class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+                                   th:field="*{requestedAmount}">
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button type="submit"
+                                class="text-white bg-indigo-700  hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Создать заявку</button>
+                    </div>
+                </div>
+                        <input type="submit" value="Update User">
+                    </form>
+
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
